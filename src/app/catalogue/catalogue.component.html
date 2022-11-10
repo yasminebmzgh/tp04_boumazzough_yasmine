@@ -1,0 +1,9 @@
+<h1>Catalogue des produits</h1>
+<app-search-bar [categorie]="'name'" [listeFiltree]="tabProduits" (filterResult)="updateCatalogue($event)"
+        (filterReset)="getCatalogue()">
+</app-search-bar>
+<ul>
+    <li *ngFor="let produit of tabProduits">
+      {{ produit.name }}
+    </li>
+</ul>

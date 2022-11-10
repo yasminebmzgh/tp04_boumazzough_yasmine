@@ -1,0 +1,27 @@
+<div id="formulaire" class="container-fluid">
+    <form (ngSubmit)="SubmitForm()">
+    Nom: <input type="text" id="nom" name="nom" [(ngModel)]="client.nom" pattern= "^[A-Z][a-z]*+([- ]*[A-Z][a-z]*)*$" appLetterOnly required><br>
+    Prénom: <input type="text" id="prenom" name="prenom" [(ngModel)]="client.prenom" pattern= "^[A-Z][a-z]*+([- ]*[A-Z][a-z]*)*$" appLetterOnly required><br>
+    Adresse: <input type="text" id="adresse" name="adresse" [(ngModel)]="client.adress" ><br>			Code Postal: <input type="text" id="codepostale" name="codepostal" pattern= "^[0-9]{5}$" appNumberOnly ><br>
+    Ville: <input type="text" id="ville" name="ville" [(ngModel)]="client.ville" pattern= "^[A-Z][a-z]*+([- ]*[A-Z][a-z]*)*$" appLetterOnly><br>
+    Pays: <input type="text" id="pays" name="pays" [(ngModel)]="client.pays" pattern= "^[A-Z][a-z]*+([- ]*[A-Z][a-z]*)*$" appLetterOnly><br>
+    Tel: <input type="tel" id="tel" name="tel" [(ngModel)]="client.tel" appNumberOnly length="10"><br>
+    Email: <input type="email" id="email" name="email" [(ngModel)]="client.email" pattern= "[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" ><br>
+    Civilité: 
+    <input type= "radio" name="civilite" value="m" checked> M
+    <input type= "radio" name="civilite" value="mme"> Mme
+    <input type= "radio" name="civilite" value="mlle"> Mlle<br>
+    Identifiant/Login: <input type="text" id="login" name="login" [(ngModel)]="client.login" pattern="^[0-9a-zA-Z]{3,20}$" ><br>
+    Mot de passe: <input type="text" id="mdp" name="mdp" [(ngModel)]="client.mdp"       placeholder="Password"    required ><br>
+    Confirmation du mot de passe: <input type="text" id="confirmMdp" name="confirmMdp"       placeholder="Password"    [(ngModel)]="client.confirmMdp"  required><br>
+    <button type="submit">Submit</button>
+</form> 
+<app-client-info
+  *ngIf="clientVerified.prenom"
+  [user]="clientVerified"
+></app-client-info>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="script.js"></script>
