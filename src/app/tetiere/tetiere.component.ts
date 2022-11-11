@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngxs/store';
 
 
 @Component({
@@ -11,10 +10,9 @@ export class TetiereComponent implements OnInit {
 
   nbElementPanier = 0;
 
-  constructor(private store: Store) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.store.select(state=>state.panier.products.length).subscribe(number => this.nbElementPanier = number)
 
   }
   

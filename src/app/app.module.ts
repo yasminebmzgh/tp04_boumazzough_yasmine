@@ -14,6 +14,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
 import { ClientResultsComponent } from './client-results/client-results.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ClientResultsComponent } from './client-results/client-results.componen
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

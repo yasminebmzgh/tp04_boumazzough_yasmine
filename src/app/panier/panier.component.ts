@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Models/product.model';
+import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  products$ : Observable<Product[]>;
+  products:  Product[];
+  constructor(private store:Store) {
+    this.products$ = new Observable();
+    this.products = [];
+   }
 
   ngOnInit(): void {
+
   }
+
 
 }
