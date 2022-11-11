@@ -17,6 +17,13 @@ export class ClientService {
   getClient(): Array<Client> {
     return this.clientsList;
   }
+  get(id: number): Client {
+    return this.clientsList.find(client => client.id == id) as Client;
+  }
+  getAll(): Array<Client> {
+    return this.clientsList;
+  }
+
 
   postLogin(): void {
     console.log("postLogin activé");

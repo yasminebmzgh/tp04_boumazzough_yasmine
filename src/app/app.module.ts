@@ -12,7 +12,8 @@ import { ClientInfoComponent } from './client-info/client-info.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { DetailsComponent } from './details/details.component';
+import { ClientResultsComponent } from './client-results/client-results.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { AppRoutingModule } from './app-routing.module';
     PhonePipePipe,
     ClientInfoComponent,
     CatalogueComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    DetailsComponent,
+    ClientResultsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
